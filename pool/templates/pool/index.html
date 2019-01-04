@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>
+            Pool App
+        </title>
+    </head>
+    <body>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <h1>
+            Hello from Amazing Pool App
+        </h1>
+        <h2>{{title}}</h2>
+        <ul>
+            {% for pool in pools %}
+                <li>
+                    <a href="/pool/details/{{pool.id}}">{{pool.title}}</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <h2>Hello {{user}}</h2>
+        <a href="/accounts/logout">
+            Logout
+        </a>
+    </body>
+</html>

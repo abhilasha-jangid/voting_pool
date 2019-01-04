@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Pool App</TITLE>
+    </head>
+    
+    <body>
+        <h1>{{pool.title}}</h1>
+
+        <div>
+            {{pool.question}}
+            <ul>
+                {% for option in options %}
+                    <li>
+                        <a href="/pool/submitVote/{{pool.id}}/{{option.id}}">{{option.name}}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div>
+            {{pool.created_at}}
+        </div>
+
+        <div>
+            {{pool.status}}
+        </div>
+        
+        <a href="/">Go Back</a>
+    </body> 
+</html>
